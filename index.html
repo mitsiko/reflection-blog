@@ -6,53 +6,25 @@
     <title>Reflection Slideshow</title>
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
-    <style>
-        body {
-            background-color: #f3f3f1;
-            font-family: Arial, sans-serif;
-            margin: 3.125rem;
-        }
-        h1{
-            text-align:center;
-        }
-        .slideshow-container {
-            position: relative;
-            max-width: 600px;
-            margin: auto;
-            text-align: center;
-            font-size: 1.2em;
-            padding: 10px;
-        }
-        button {
-            padding: 10px 20px;
-            margin: 5px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        .button-container {
-            display: flex;
-            justify-content: space-between; /* Position buttons at the ends */
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">    
 </head>
 <body>
 
-<h1>My Reflection on the Data Privacy Awareness Campaign</h1>
+<h1>MY REFLECTIONS ON THE DATA PRIVACY AWARENESS CAMPAIGN</h1>
 
 <div class="slideshow-container">
-    <div id="slide-content"></div>
+    <div class="text-slide" id="slide-content"></div>
+    <div class="image-slide" id="image-slide"></div>
 </div>
 
-<!-- Added ids to buttons -->
 <div class="button-container">
-    <button id="prev-btn">Previous</button>
-    <button id="next-btn">Next</button>
+    <button id="prev-btn">←</button> <!-- Left arrow -->
+    <button id="next-btn">→</button> <!-- Right arrow -->
+</div>
+
+<div class="page-number">
+    <span id="current-page">1</span> / <span id="total-pages">9</span>
 </div>
 
 <py-script>
@@ -71,23 +43,43 @@ slides = [
     "In conclusion, the Data Privacy Awareness Campaign wasn’t just an event to sit through, but a learning experience that has changed how I view my digital life. With the rise of cybercrimes and the ever-expanding online world, we all need to be more mindful of our data and how we protect it. The insights from RA 10173 and RA 10175 have made it clear that data privacy is not just a legal obligation but a personal responsibility. More than ever, it’s important to stay informed and proactive in the fight against cybercrimes, ensuring that our digital spaces remain safe for everyone."
 ]
 
+# Define background images for each slide
+background_images = [
+    "url('images/slide1c.png')",  # Background image for the first slide
+    "url('images/slide2a.png')",  # Background image for the second slide
+    "url('images/slide3a.png')",  # Background image for the third slide
+    "url('images/slide4.png')",  # Background image for the fourth slide
+    "url('images/slide5.png')",  # Background image for the fifth slide
+    "url('images/slide6.png')",  # Background image for the sixth slide
+    "url('images/slide7.png')",  # Background image for the seventh slide
+    "url('images/slide8.png')",  # Background image for the eighth slide
+    "url('images/slide9a.png')",  # Background image for the ninth slide
+]
+
 # Set the current slide index
 current_index = 0
 
-# Function to update the slide content
+# Update page number
+def update_page_number():
+    document.getElementById("current-page").innerText = current_index + 1
+    document.getElementById("total-pages").innerText = len(slides)
+
+# Function to update the slide content and background
 def show_slide(index):
     document.getElementById("slide-content").innerText = slides[index]
+    document.getElementById("image-slide").style.backgroundImage = background_images[index]
+    update_page_number()
 
 # Function to move to the next slide
 def next_slide(event=None):
     global current_index
-    current_index = (current_index + 1) % len(slides)  # Loop back to the first slide
+    current_index = (current_index + 1) % len(slides)
     show_slide(current_index)
 
 # Function to move to the previous slide
 def prev_slide(event=None):
     global current_index
-    current_index = (current_index - 1) % len(slides)  # Loop back to the last slide
+    current_index = (current_index - 1) % len(slides)
     show_slide(current_index)
 
 # Expose functions to JavaScript

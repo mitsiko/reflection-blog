@@ -1,0 +1,86 @@
+body {
+    font-family: "Playfair Display";
+    margin: 20px;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.95rem;
+    background-color: #f4eada;
+    color: #5e648e;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: "Playfair Display";
+    width: 75%;
+    margin: auto;
+    color: #5e648e;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right:20px;
+    border-top: solid 2px;
+    border-bottom: double 6px;
+    font-weight: bold;
+    font-size: 1.73rem;
+}
+
+.slideshow-container {
+    display: flex;
+    max-width: 90%;
+    margin: auto;
+    justify-content: center;
+}
+
+.text-slide {
+    flex: 0 0 40%;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    height: 300px;
+    text-align: justify;
+    overflow: hidden;
+    transition: opacity 0.5s ease;
+    border-right: solid 2px;
+}
+
+.image-slide {
+    flex: 0 0 40%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 300px;
+    margin-left: 20px;
+    transition: background-image 0.5s ease;
+    margin-top: 20px;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-left: 0px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #f4eada;
+    color: #5e648e;
+    border: solid 2px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5e648e;
+    color: #f4eada;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.page-number {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #5e648e;
+}
