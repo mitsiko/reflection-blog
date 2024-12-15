@@ -27,69 +27,71 @@
     <span id="current-page">1</span> / <span id="total-pages">9</span>
 </div>
 
-<py-script>
-from js import document
-
-# Define the reflection paragraphs as a list
-slides = [
-    "Attending the Data Privacy Awareness Campaign was an eye-opener for me. With everything going digital these days, it’s clear that protecting our personal information online has become a major concern. During the event, I learned a lot about Republic Act 10173, also known as the Data Privacy Act of 2012, and Republic Act 10175, the Cybercrime Prevention Act of 2012, both of which play key roles in safeguarding our data and addressing cybercrimes. This reflection is an attempt to digest what was discussed, particularly the key features of these laws and how they connect to our everyday online experiences.",
-    "Let’s start with RA 10173, specifically Sections 12, 13, 14, 16, 17, 18, 20, 21, 22, 25, 26, 27, 28, 29, 30, 31, 32, 35, and 36. The law is designed to protect the personal data of individuals. Sections 12 and 13 highlight the criteria for lawful processing of personal data, meaning there are clear guidelines for when organizations can collect and use our data. Whether it’s for fulfilling legal obligations or for protecting an individual’s vital interests, these sections made me think about the permissions we give to websites and apps. It's a reminder to always be cautious of what we agree to when clicking on 'Terms and Conditions.'",
+<script>
+// Define the reflection paragraphs as an array
+const slides = [
+    "Attending the Data Privacy Awareness Campaign was an eye-opener for me. With everything going digital these days, it's clear that protecting our personal information online has become a major concern. During the event, I learned a lot about Republic Act 10173, also known as the Data Privacy Act of 2012, and Republic Act 10175, the Cybercrime Prevention Act of 2012, both of which play key roles in safeguarding our data and addressing cybercrimes. This reflection is an attempt to digest what was discussed, particularly the key features of these laws and how they connect to our everyday online experiences.",
+    "Let's start with RA 10173, specifically Sections 12, 13, 14, 16, 17, 18, 20, 21, 22, 25, 26, 27, 28, 29, 30, 31, 32, 35, and 36. The law is designed to protect the personal data of individuals. Sections 12 and 13 highlight the criteria for lawful processing of personal data, meaning there are clear guidelines for when organizations can collect and use our data. Whether it's for fulfilling legal obligations or for protecting an individual's vital interests, these sections made me think about the permissions we give to websites and apps. It's a reminder to always be cautious of what we agree to when clicking on 'Terms and Conditions.'",
     "Other sections like 16 and 18 talk about rights—our rights as data subjects, such as accessing, correcting, or even objecting to how our data is processed. Section 17, which deals with security measures, struck me because it emphasizes how organizations must protect personal data, using strict protocols to avoid breaches. The responsibility placed on data controllers under sections 25 to 36 reinforces the importance of accountability in handling data.",
-    "On the other hand, RA 10175, the Cybercrime Prevention Act of 2012, addresses the growing number of cybercrimes. Sections 4A, 4B, and 4C cover the punishable acts, and reading through these opened my eyes to how varied cybercrimes are. We usually think of hacking or phishing, but there’s much more. For instance, Section 4A (1-6) includes offenses like illegal access, data interference, and cyber-squatting. Section 4B, which talks about content-related offenses, mentions libel—a huge issue now with the rise of social media. Then there’s Section 4C, which addresses cybersex, a concerning issue that takes advantage of vulnerable individuals online. It made me think more about the dark side of the internet, where malicious activities often go unnoticed.",
+    "On the other hand, RA 10175, the Cybercrime Prevention Act of 2012, addresses the growing number of cybercrimes. Sections 4A, 4B, and 4C cover the punishable acts, and reading through these opened my eyes to how varied cybercrimes are. We usually think of hacking or phishing, but there's much more. For instance, Section 4A (1-6) includes offenses like illegal access, data interference, and cyber-squatting. Section 4B, which talks about content-related offenses, mentions libel—a huge issue now with the rise of social media. Then there's Section 4C, which addresses cybersex, a concerning issue that takes advantage of vulnerable individuals online. It made me think more about the dark side of the internet, where malicious activities often go unnoticed.",
     "Section 10 of RA 10175 was also mentioned, detailing the punishable acts that fall under conspiracy and aiding or abetting cybercrimes. I never realized how aiding even indirectly can make someone equally accountable. This discussion led into cybercrime warrants, particularly those defined under Supreme Court Administrative Matter No. 17-11-03-SC. There are different types of warrants depending on the nature of the crime. For instance, a WDCD warrant is for search and seizure of data, while a WICD warrant covers the interception of communications. These terms were new to me, but the campaign explained how essential they are in fighting cybercrimes.",
     "One thing that stood out to me during the event was the discussion about the PNP Anti-Cybercrime Group (PNP ACG). Their role in combating online threats is crucial, and learning about their functions, like investigating cybercrimes and collaborating with international agencies, reassured me that there are dedicated efforts to keep the digital space safe. Still, the sheer number of cybercrimes reported annually, despite these efforts, made me think about how much more needs to be done.",
-    "When talking about cybercriminals, their modus operandi seems to evolve every day. They exploit vulnerabilities, often targeting unsuspecting users with phishing scams, ransomware, or even identity theft. Understanding how they operate helps us see why cybercrime prevention isn’t just about having good laws, but also about educating the public—people like us who may unknowingly become victims. Equally important is understanding the victims. Many times, victims of cybercrimes are unaware of the threats or don’t know how to protect themselves.",
-    "One of the most important takeaways for me was the need to be vigilant. The online world is vast, and the threats are real. It’s easy to think that data breaches or cyber-attacks are things that happen to other people, but the reality is that everyone is vulnerable. The campaign reminded me that we need to take data privacy seriously—whether it’s by being careful with what we share online, knowing our rights as data subjects, or simply understanding the laws that exist to protect us.",
-    "In conclusion, the Data Privacy Awareness Campaign wasn’t just an event to sit through, but a learning experience that has changed how I view my digital life. With the rise of cybercrimes and the ever-expanding online world, we all need to be more mindful of our data and how we protect it. The insights from RA 10173 and RA 10175 have made it clear that data privacy is not just a legal obligation but a personal responsibility. More than ever, it’s important to stay informed and proactive in the fight against cybercrimes, ensuring that our digital spaces remain safe for everyone."
-]
+    "When talking about cybercriminals, their modus operandi seems to evolve every day. They exploit vulnerabilities, often targeting unsuspecting users with phishing scams, ransomware, or even identity theft. Understanding how they operate helps us see why cybercrime prevention isn't just about having good laws, but also about educating the public—people like us who may unknowingly become victims. Equally important is understanding the victims. Many times, victims of cybercrimes are unaware of the threats or don't know how to protect themselves.",
+    "One of the most important takeaways for me was the need to be vigilant. The online world is vast, and the threats are real. It's easy to think that data breaches or cyber-attacks are things that happen to other people, but the reality is that everyone is vulnerable. The campaign reminded me that we need to take data privacy seriously—whether it's by being careful with what we share online, knowing our rights as data subjects, or simply understanding the laws that exist to protect us.",
+    "In conclusion, the Data Privacy Awareness Campaign wasn't just an event to sit through, but a learning experience that has changed how I view my digital life. With the rise of cybercrimes and the ever-expanding online world, we all need to be more mindful of our data and how we protect it. The insights from RA 10173 and RA 10175 have made it clear that data privacy is not just a legal obligation but a personal responsibility. More than ever, it's important to stay informed and proactive in the fight against cybercrimes, ensuring that our digital spaces remain safe for everyone."
+];
 
-# Define background images for each slide
-background_images = [
-    "url('images/slide1.webp')",  # Background image for the first slide
-    "url('images/slide2.webp')",  # Background image for the second slide
-    "url('images/slide3.webp')",  # Background image for the third slide
-    "url('images/slide4.webp')",  # Background image for the fourth slide
-    "url('images/slide5.webp')",  # Background image for the fifth slide
-    "url('images/slide6.webp')",  # Background image for the sixth slide
-    "url('images/slide7.webp')",  # Background image for the seventh slide
-    "url('images/slide8.webp')",  # Background image for the eighth slide
-    "url('images/slide9.webp')",  # Background image for the ninth slide
-]
+// Define background images for each slide
+const backgroundImages = [
+    "url('images/slide1.webp')",
+    "url('images/slide2.webp')",
+    "url('images/slide3.webp')",
+    "url('images/slide4.webp')",
+    "url('images/slide5.webp')",
+    "url('images/slide6.webp')",
+    "url('images/slide7.webp')",
+    "url('images/slide8.webp')",
+    "url('images/slide9.webp')"
+];
 
-# Set the current slide index
-current_index = 0
+// Initialize current slide index
+let currentIndex = 0;
 
-# Update page number
-def update_page_number():
-    document.getElementById("current-page").innerText = current_index + 1
-    document.getElementById("total-pages").innerText = len(slides)
+// Update page number
+function updatePageNumber() {
+    document.getElementById("current-page").innerText = currentIndex + 1;
+    document.getElementById("total-pages").innerText = slides.length;
+}
 
-# Function to update the slide content and background
-def show_slide(index):
-    document.getElementById("slide-content").innerText = slides[index]
-    document.getElementById("image-slide").style.backgroundImage = background_images[index]
-    update_page_number()
+// Function to update the slide content and background
+function showSlide(index) {
+    document.getElementById("slide-content").innerText = slides[index];
+    document.getElementById("image-slide").style.backgroundImage = backgroundImages[index];
+    updatePageNumber();
+}
 
-# Function to move to the next slide
-def next_slide(event=None):
-    global current_index
-    current_index = (current_index + 1) % len(slides)
-    show_slide(current_index)
+// Function to move to the next slide
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+}
 
-# Function to move to the previous slide
-def prev_slide(event=None):
-    global current_index
-    current_index = (current_index - 1) % len(slides)
-    show_slide(current_index)
+// Function to move to the previous slide
+function prevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+}
 
-# Expose functions to JavaScript
-document.getElementById("next-btn").onclick = next_slide
-document.getElementById("prev-btn").onclick = prev_slide
-
-# Initialize the first slide
-show_slide(current_index)
-
-</py-script>
+// Add event listeners when the DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Add click event listeners to buttons
+    document.getElementById("next-btn").addEventListener('click', nextSlide);
+    document.getElementById("prev-btn").addEventListener('click', prevSlide);
+    
+    // Initialize the first slide
+    showSlide(currentIndex);
+});
+</script>
 
 </body>
 </html>
